@@ -19,6 +19,17 @@ Static landing page for the MPS World Summit 2026 project announcement, with a s
 
 The form posts to `/api/leads`. If you want to use another service instead, set `window.ANIVANCE_FORM_ENDPOINT` before `script.js` is loaded.
 
+After deployment, open `/api/health` on your Cloudflare Pages domain. It should return:
+
+```json
+{
+  "ok": true,
+  "service": "anivance-mps-form"
+}
+```
+
+If `/api/health` returns 404, Cloudflare Pages is not deploying the `functions` directory. Confirm the project is deployed through Git integration or Wrangler, not Direct Upload, and that the root directory is the repository root.
+
 ## Important
 
 Do not write submissions directly to GitHub from browser JavaScript. That would require exposing a GitHub token publicly. Keep the database write behind Cloudflare Pages Functions, Workers, or another server-side endpoint.
