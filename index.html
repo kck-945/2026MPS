@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Anivance AI × NYCU waitlist for the MPS World Summit 2026 project presentation."
+    />
+    <title>Anivance AI × NYCU | MPS World Summit 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="signal-canvas" aria-hidden="true"></canvas>
+
+    <main class="page-shell">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="kicker">MPS World Summit 2026</p>
+        <h1 id="page-title">Anivance AI × NYCU</h1>
+        <p class="statement">
+          Modality-Agnostic Deep Generative Platform.
+          <span>Project presenting at MPS World Summit 2026.</span>
+          <span>Code &amp; Preprint Coming Soon.</span>
+        </p>
+        <p class="access-line">
+          Leave your email for early access / collaboration.
+        </p>
+        <a
+          class="linkedin-link"
+          href="https://www.linkedin.com/in/ching-kai-kung-7900b7242"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+      </section>
+
+      <section class="signup-panel" aria-label="Early access form">
+        <form id="lead-form" novalidate>
+          <div class="field-group">
+            <label for="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              placeholder="Your name"
+              required
+            />
+            <p class="error-message" data-error-for="name"></p>
+          </div>
+
+          <div class="field-group">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required
+            />
+            <p class="error-message" data-error-for="email"></p>
+          </div>
+
+          <div class="field-group">
+            <label for="message">Other questions</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Collaboration interests, questions, or notes"
+            ></textarea>
+            <p class="error-message" data-error-for="message"></p>
+          </div>
+
+          <button class="submit-button" type="submit">
+            <span>Request access</span>
+          </button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
