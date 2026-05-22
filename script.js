@@ -79,15 +79,26 @@ async function submitLead(event) {
     });
 
     if (!response.ok) {
-      throw new Error(`Request failed with ${response.status}`);
+      throw new Error(await readErrorMessage(response));
     }
 
     form.reset();
     setStatus("Thank you. We will be in touch soon.", "success");
   } catch (error) {
-    setStatus("Submission is not connected yet. Please try again later.", "error");
+    setStatus(`Submission failed: ${error.message}`, "error");
   } finally {
     submitButton.disabled = false;
+  }
+}
+
+async function readErrorMessage(response) {
+  const fallback = `Request failed with ${response.status}`;
+
+  try {
+    const data = await response.json();
+    return data.error || fallback;
+  } catch (error) {
+    return fallback;
   }
 }
 
